@@ -21,7 +21,6 @@ uId = o.setRequest(BLUETOOTH_DEVICE_ADDRESS)
 o.start()
 
 am = ambient.Ambient(AMBIENT_CHANNEL_ID, AMBIENT_WRITE_KEY)
-###am2 = ambient.Ambient(AMBIENT_CHANNEL_ID, AMBIENT_WRITE_KEY)
 
 latest_update = datetime.datetime.now()
 while True:
@@ -34,14 +33,9 @@ while True:
                 'd1': data.val_temp,
                 'd2': data.val_noise,
                 'd3': data.val_heat,
+                'd4': data.val_light,
                 }
             )
-            ##am2.send({
-            ##    'created': data.tick_last_update.strftime('%Y-%m-%d %H:%M:%S'),
-            ##    ####'d1': data.val_temp,
-            ##    'd1': data.val_noise,
-            ##    }
-            ##)
 
         latest_update = data.tick_last_update
 
